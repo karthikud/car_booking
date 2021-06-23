@@ -1,0 +1,28 @@
+mutation {
+  create_booking(booking: {customer: {name: "siji", email: "kathikud@gmail.com", phone_number: "0793391890"}, vehicle: {make: "volvo", model: "xc40", vin: "5N3AA08CX7N805813"}, time: "2021-06-21T14:48:00.000+00:00"}) {
+    time
+  }
+}
+
+
+mutation {
+  upsert_setting(Setting: {name: "capacity", value: "6"}) {
+    name
+    value
+  }
+}
+
+
+{
+  bookings(filter: {day: "2021-06-21"}) {
+    customer {
+      name
+    }
+    vehicle {
+      make
+      model
+      vin
+    }
+    time
+  }
+}
